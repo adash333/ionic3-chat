@@ -1,3 +1,43 @@
 page-home {
+  ion-grid ion-row ion-col .media-body {
+  padding: 18px;
+  margin: 0 10px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  font-size: 15px;
+  word-break: break-all;
+  }
+
+  ion-grid ion-row ion-col .media-body h4.media-heading {
+    color: #999999;
+    font-size: 13px;
+  }
+
+  ion-grid ion-row ion-col a.icon-rounded {
+    display: block;
+    font-size: 26px;
+    color: #fff;
+    line-height: normal;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+  }
+
+  ion-grid ion-row ion-col .media-left {
+    width: 30px;
+  }
+
+  ion-grid ion-row ion-col .media-left a.icon-rounded {
+    background-color: #f0ad4e;
+  }
+
+  ion-grid ion-row ion-col .media-right a.icon-rounded {
+  background-color: #5cb85c;
+}
+
 
 }
