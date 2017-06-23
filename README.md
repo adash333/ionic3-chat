@@ -1,4 +1,8 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+このページは、以下のサイトのAngular4アプリを参考に、ionic3アプリ作成の練習を行っているものです。
+
+作成中です。
+
+
 
 ## How to use this template
 
