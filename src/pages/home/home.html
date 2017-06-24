@@ -21,7 +21,8 @@
 
     <ion-col col-10>
       <div class="media-body">
-          <h4 class="media-heading">{{comment.user.name}} Date:2016/09/01</h4><!--comment.nameに変更-->
+          <!--DatePipeを追加-->
+          <h4 class="media-heading">{{comment.user.name}} Date:{{comment.date | chatDate }}</h4><!--comment.nameに変更-->
           <div>{{comment.content}}</div><!--comment.contentに変更-->
       </div>
     </ion-col>
@@ -36,24 +37,6 @@
   </ion-row>
 </ion-grid>
 </ng-container>
-
-<hr>
-
-<ion-grid>
-  <ion-row>
-    <ion-col col-10>
-      <div class="media-body">
-        <h4 class="media-heading">Tanaka Jiro Date:2016/09/01</h4>
-        <div>{{content}}</div> <!--contentに変更-->
-      </div>
-    </ion-col>
-    <ion-col col-2>
-      <div class="media-right">
-        <a href="#" class="icon-rounded">T</a>
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
 
 <hr>
 
