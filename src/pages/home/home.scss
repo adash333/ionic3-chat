@@ -27,6 +27,20 @@ page-home {
     text-decoration: none;
   }
 
+  ng-container ion-grid ion-row ion-col a.icon-rounded {
+    display: block;
+    font-size: 26px;
+    color: #fff;
+    line-height: normal;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+  }
+
   ion-grid ion-row ion-col .media-left {
     width: 30px;
   }
@@ -36,8 +50,16 @@ page-home {
   }
 
   ion-grid ion-row ion-col .media-right a.icon-rounded {
-  background-color: #5cb85c;
-}
+    background-color: #5cb85c;
+  }
+
+  ng-container ion-grid ion-row ion-col .media-left a.icon-rounded {
+    background-color: #f0ad4e;
+  }
+
+  ng-container ion-grid ion-row ion-col .media-left a.icon-rounded {
+    background-color: #5cb85c;
+  }
 
 
 }
