@@ -1,5 +1,7 @@
 このページは、以下のサイトのAngular4アプリを参考に、ionic3アプリ作成の練習を行っているものです。
 
+src/environment.ts は、ご自身で作成して、ご自身のfirebaseのAPIキーその他をコピペしてください。
+
 作成中です。
 
 Angular+Firebaseでチャットアプリを作る
