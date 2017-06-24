@@ -8,6 +8,7 @@
 
 <ion-content padding>
 
+<ng-container *ngFor="let comment of comments"><!--追加-->
 <ion-grid>
   <ion-row>
     <ion-col col-2>
@@ -17,19 +18,22 @@
     </ion-col>
     <ion-col col-10>
       <div class="media-body">
-          <h4 class="media-heading">Suzuki Taro Date:2016/09/01</h4>
-          <div>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</div>
+          <h4 class="media-heading">{{comment.name}} Date:2016/09/01</h4><!--comment.nameに変更-->
+          <div>{{comment.content}}</div><!--comment.contentに変更-->
         </div>
     </ion-col>
   </ion-row>
 </ion-grid>
+</ng-container>
+
 <hr>
+
 <ion-grid>
   <ion-row>
     <ion-col col-10>
       <div class="media-body">
         <h4 class="media-heading">Tanaka Jiro Date:2016/09/01</h4>
-        <div>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</div>
+        <div>{{content}}</div> <!--contentに変更-->
       </div>
     </ion-col>
     <ion-col col-2>
@@ -46,7 +50,7 @@
   <ion-row>
     <ion-col col-10>
       <ion-item>
-      <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="content" name="comment" placeholder="Comment"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col col-2>
