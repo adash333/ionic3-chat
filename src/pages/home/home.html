@@ -8,7 +8,7 @@
 
 <ion-content padding>
 
-<ng-container *ngFor="let comment of comments"><!--追加-->
+<ng-container *ngFor="let comment of comments; let i=index"><!--iを追加-->
   <ion-grid>
     <ion-row>
 
@@ -21,9 +21,25 @@
 
       <ion-col col-10>
         <div class="media-body">
-            <!--DatePipeを追加-->
-            <h4 class="media-heading">{{comment.user.name}} Date:{{comment.date | chatDate }}</h4><!--comment.nameに変更-->
-            <div>{{comment.content}}</div><!--comment.contentに変更-->
+          <!--DatePipeを追加-->
+          <h4 class="media-heading">{{comment.user.name}} Date:{{comment.date | chatDate }}
+            <button ion-button small (click)="toggleEditComment(i)">編集</button><!-- 追加 -->
+            <button ion-button color="danger" small (click)="deleteComment(comment.key)">削除</button><!-- 追加 -->            
+          </h4>
+          <!-- edit_flagによって編集フィールドを切り替える -->
+          <ng-container *ngIf="!comment.edit_flag">
+            {{comment.content}}
+          </ng-container>
+          <ng-container *ngIf="comment.edit_flag">
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="comment.content" name="edit_comment"></ion-input>
+            </ion-item>
+            <div class="edit-buttons">
+              <button ion-button color="secondary" small (click)="saveEditComment(i, comment.key)">保存</button>
+              <button ion-button color="dark" small (click)="resetEditComment(i)">リセット</button>    
+            </div>
+          </ng-container>
+          <!-- 切り替えここまで -->
         </div>
       </ion-col>
 
@@ -37,25 +53,6 @@
     </ion-row>
   </ion-grid>
 </ng-container>
-
-<!-- Realtime Databaseの反映箇所 -->
-<ion-grid>
-  <ion-row *ngFor="let item of items | async">
-    <ion-col col-2 >
-      <div class="media-left">
-          <a href="#" class="icon-rounded">{{item.initial}}</a>
-      </div>
-    </ion-col>
-
-    <ion-col col-10>
-      <div class="media-body">
-          <h4 class="media-heading">{{item.name}}</h4>
-          <div>{{item.content}}</div>
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
 
 <hr>
 
